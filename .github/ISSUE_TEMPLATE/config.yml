@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 私密安全报告
+    url: https://github.com/pinkman1893/yuque-note-publisher/security/advisories/new
+    about: 不要在公开 issue 中发布凭据或漏洞利用细节。

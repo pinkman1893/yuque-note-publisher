@@ -1,0 +1,26 @@
+name: Bug report
+description: 报告可复现的问题，不包含凭据或私人笔记。
+body:
+  - type: markdown
+    attributes:
+      value: "请勿粘贴 Token、Cookie 或私人正文。安全问题请使用私密漏洞报告。"
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      description: 项目版本、Python 版本与操作系统。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 最小复现
+      description: 命令、虚构数据与已脱敏的错误。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 预期与实际行为
+    validations:
+      required: true

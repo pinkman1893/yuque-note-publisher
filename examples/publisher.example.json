@@ -1,0 +1,8 @@
+{
+  "github_repository": "YOUR_NAME/learning-notes",
+  "local_repository": "/absolute/path/to/learning-notes",
+  "staging_directory": "/absolute/path/to/private-staging",
+  "domain_order": ["编程语言", "数据结构与算法"],
+  "batch_size": 3,
+  "date_timezone": "Asia/Shanghai"
+}

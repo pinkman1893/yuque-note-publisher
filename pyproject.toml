@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yuque-note-publisher"
+version = "0.1.0"
+description = "A review-first agent skill and CLI toolkit for publishing Yuque learning notes to GitHub."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "pinkman1893"}]
+keywords = ["yuque", "agent-skills", "markdown", "learning-notes", "github"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/pinkman1893/yuque-note-publisher"
+Issues = "https://github.com/pinkman1893/yuque-note-publisher/issues"
+Documentation = "https://github.com/pinkman1893/yuque-note-publisher/tree/main/docs"
+
+[project.scripts]
+yuque-note = "yuque_note_publisher.yuque_note:main"
+yuque-checkpoint = "yuque_note_publisher.publish_checkpoint:main"
+yuque-history = "yuque_note_publisher.update_history:main"
+yuque-homepage = "yuque_note_publisher.update_homepage:main"
+
+[tool.setuptools]
+packages = ["yuque_note_publisher"]
+package-dir = {yuque_note_publisher = "skills/yuque-note-publisher/scripts"}
+
+[tool.setuptools.data-files]
+"share/yuque-note-publisher" = ["skills/yuque-note-publisher/SKILL.md"]
+"share/yuque-note-publisher/references" = ["skills/yuque-note-publisher/references/workflow.md"]
