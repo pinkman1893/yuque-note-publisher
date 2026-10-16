@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" width="144" alt="Open notebook pages forming a bird's wings">
+</p>
+
 # Yuque Note Publisher
 
 [中文](README.md) · [CLI reference](docs/cli.md) · [MIT license](LICENSE)

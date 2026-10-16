@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" width="144" alt="展开的书页组成鸟翼，象征学习笔记的整理与传播">
+</p>
+
 # Yuque Note Publisher
 
 **把语雀里的学习笔记，整理成 GitHub 上可持续维护的知识库。**

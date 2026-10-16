@@ -18,6 +18,10 @@ def main():
     errors = []
     for relative in files:
         path = root / relative
+        if relative.suffix.lower() == ".png":
+            if not path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                errors.append((relative, "invalid PNG signature"))
+            continue
         text = path.read_text(encoding="utf-8")
         normalized = "\n".join(line.rstrip() for line in text.splitlines()).rstrip() + "\n"
         if text != normalized:
