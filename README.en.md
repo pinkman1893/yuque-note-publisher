@@ -1,10 +1,27 @@
 <p align="center">
-  <img src="assets/logo.png" width="144" alt="Open notebook pages forming a bird's wings">
+  <img src="assets/social-preview.png" width="1280" alt="Yuque Note Publisher — Learning notes. Beautifully organized.">
 </p>
 
-# Yuque Note Publisher
+<p align="center">
+  <strong>Turn Yuque learning notes into a lasting GitHub knowledge repository.</strong>
+</p>
 
-[中文](README.md) · [CLI reference](docs/cli.md) · [MIT license](LICENSE)
+<p align="center">
+  <a href="https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml"><img src="https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/pinkman1893/yuque-note-publisher/releases/tag/v0.1.0"><img src="https://img.shields.io/badge/release-v0.1.0_Alpha-0b766b" alt="v0.1.0 Alpha"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.10%2B-0b766b" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0b766b" alt="MIT License"></a>
+</p>
+
+<p align="center">
+  <a href="#install">Quick start</a> ·
+  <a href="#use">Usage</a> ·
+  <a href="docs/cli.md">CLI reference</a> ·
+  <a href="docs/architecture.md">Architecture</a> ·
+  <a href="README.md">中文</a>
+</p>
+
+---
 
 A review-first Agent Skill and dependency-free Python toolkit for turning selected Yuque learning notes into a maintainable GitHub knowledge repository.
 

@@ -1,20 +1,34 @@
 <p align="center">
-  <img src="assets/logo.png" width="144" alt="展开的书页组成鸟翼，象征学习笔记的整理与传播">
+  <img src="assets/social-preview.png" width="1280" alt="Yuque Note Publisher — Learning notes. Beautifully organized.">
 </p>
 
-# Yuque Note Publisher
+<p align="center">
+  <strong>把语雀里的学习笔记，整理成 GitHub 上可持续维护的知识库。</strong>
+</p>
 
-**把语雀里的学习笔记，整理成 GitHub 上可持续维护的知识库。**
+<p align="center">
+  <a href="https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml"><img src="https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/pinkman1893/yuque-note-publisher/releases/tag/v0.1.0"><img src="https://img.shields.io/badge/release-v0.1.0_Alpha-0b766b" alt="v0.1.0 Alpha"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.10%2B-0b766b" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0b766b" alt="MIT License"></a>
+</p>
 
-[![CI](https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml/badge.svg)](https://github.com/pinkman1893/yuque-note-publisher/actions/workflows/ci.yml)
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+<p align="center">
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#工作流程">工作流程</a> ·
+  <a href="docs/cli.md">CLI 参考</a> ·
+  <a href="docs/architecture.md">设计说明</a> ·
+  <a href="README.en.md">English</a>
+</p>
 
-[快速开始](#快速开始) · [工作流程](#工作流程) · [CLI 参考](docs/cli.md) · [设计说明](docs/architecture.md) · [English](README.en.md)
+---
 
 在语雀里写笔记，在 GitHub 上形成长期的学习地图。这个项目提供一套可安装的 **Agent Skill** 和 **零运行时第三方依赖的 Python 工具**，覆盖精确获取、内容审查、语义归档、图片本地化、更新记录、导航与断点恢复。
 
-来自真实的个人学习归档流程，面向愿意保留个人表达、同时让笔记适合公开阅读的人。当前版本为 **0.1.0 / Alpha**，提供可运行的核心工具、离线测试和 Windows/Linux CI；尚未覆盖所有语雀富文本和媒体类型。
+来自真实的个人学习归档流程，面向愿意保留个人表达、同时让笔记适合公开阅读的人。
+
+> [!NOTE]
+> 当前版本为 **v0.1.0 Alpha**。核心工具已通过离线测试和 Windows/Linux CI；复杂富文本、画板、附件及裁切渲染仍需人工核对。
 
 ## 为什么做这个
 
@@ -22,12 +36,14 @@
 
 Yuque Note Publisher 把这些重复工作交给脚本，把内容判断留给 Agent 和作者：
 
-- **指定哪篇，处理哪篇**：精确链接直接抓正文，避免为了找一篇笔记扫描所有知识库。
-- **归档有语境**：结合正文和现有目录判断领域/主题，区分课程笔记、刷题总结与项目实践。
-- **保留笔记的时间线**：文件日期固定取创建日期，只记录实质知识补充，不把修复过程写成学习成果。
-- **媒体与笔记一起维护**：图片按内容哈希保存，Markdown 与 HTML 图片使用本地相对路径。
-- **额度看得见**：API 串行请求、本地预算、保守计数、短 429 等待、图片断点续传。
-- **作者保持控制**：实质改写先确认，公开正文和提交说明不使用助手工作口吻。
+| 能力 | 具体做法 |
+| --- | --- |
+| **精确获取** | 指定哪篇就处理哪篇，精确链接直接抓正文。 |
+| **语义归档** | 结合正文和目录判断主题，区分课程笔记、刷题总结与项目实践。 |
+| **稳定时间线** | 文件日期固定取创建日期，只记录实质知识补充。 |
+| **媒体本地化** | 图片按内容哈希保存，Markdown 与 HTML 图片使用相对路径。 |
+| **配额与恢复** | 串行请求、本地预算、保守计数、短 429 等待与图片断点续传。 |
+| **作者控制** | 实质改写先确认，公开内容保留作者视角。 |
 
 ## 工作流程
 
@@ -45,7 +61,7 @@ flowchart LR
 
 **脚本不自带模型，也不会自动 git push。** Agent 读取 skill 后组织端到端流程；CLI 可以独立使用。它不是语雀全量备份器，也没有后台定时扫描。
 
-输出结构示例：
+### 归档后的样子
 
 ```text
 my-notes/
@@ -62,7 +78,9 @@ my-notes/
 
 ## 快速开始
 
-需要 Python 3.10+。Git/GitHub CLI 只在 Agent 发布阶段需要。工具尚未发布到 PyPI，使用仓库安装：
+**环境：** Python 3.10+；Git/GitHub CLI 只在 Agent 发布阶段需要。
+
+工具尚未发布到 PyPI，使用仓库安装：
 
 ```sh
 git clone https://github.com/pinkman1893/yuque-note-publisher.git
@@ -139,10 +157,13 @@ python -m unittest discover -s tests -v
 
 ## 文档与参与
 
-- [架构与取舍](docs/architecture.md)：Agent 与脚本分工、单一代码来源、状态与配额。
-- [CLI 参考](docs/cli.md)：命令、配置和恢复方法。
-- [完整离线示例](examples/README.md)：不用 Token 即可试验更新记录与导航。
-- [贡献指南](CONTRIBUTING.md) · [安全说明](SECURITY.md) · [版本记录](CHANGELOG.md)
+| 想做什么 | 从这里开始 |
+| --- | --- |
+| 了解 Agent 与脚本如何配合 | [架构与取舍](docs/architecture.md) |
+| 查命令、配置与失败恢复 | [CLI 参考](docs/cli.md) |
+| 不用 Token 先体验一下 | [完整离线示例](examples/README.md) |
+| 参与改进或报告问题 | [贡献指南](CONTRIBUTING.md) · [安全说明](SECURITY.md) |
+| 查看版本变化与下载 | [版本记录](CHANGELOG.md) · [Releases](https://github.com/pinkman1893/yuque-note-publisher/releases) |
 
 项目组织参考 [Anthropic Skills](https://github.com/anthropics/skills) 的自包含 skill 布局，以及 [uv](https://github.com/astral-sh/uv) 的快速上手与贡献文档层次。代码由既有语雀发布工具演进，不依赖上述项目代码。
 
