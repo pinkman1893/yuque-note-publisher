@@ -87,7 +87,7 @@ $env:YUQUE_API_DAILY_BUDGET = '45'
 
 ### 2. 安装 skill
 
-把 `skills/yuque-note-publisher/` 整个目录复制到 Agent 使用的 skills 目录。已有同名个人 skill 时，先备份并检查差异，不要直接覆盖。
+从 [Releases](https://github.com/pinkman1893/yuque-note-publisher/releases) 下载 skill ZIP，或把 `skills/yuque-note-publisher/` 整个目录复制到 Agent 使用的 skills 目录。已有同名个人 skill 时，先备份并检查差异，不要直接覆盖。
 
 例如，在没有同名 skill 的 Codex 安装中，可复制到 `~/.codex/skills/yuque-note-publisher/`。skill 自带脚本，直接以 `python scripts/yuque_note.py` 运行时不需要先安装 Python 包。其他 Agent 使用其对应的 skill 安装目录。
 
